@@ -1,0 +1,6 @@
+GET /api/health/pledges
+POST /api/pledges
+GET /api/pledges
+PATCH /api/pledges/{id}/status
+OPTIONS /api/pledges
+OPTIONS /api/pledges/{id}/status

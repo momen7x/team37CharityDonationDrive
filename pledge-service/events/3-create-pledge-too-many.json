@@ -1,0 +1,18 @@
+{
+  "version": "2.0",
+  "rawPath": "/api/pledges",
+  "rawQueryString": "",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer PASTE_A_TOKEN_FROM_THE_LOGIN_EVENT"
+  },
+  "requestContext": {
+    "http": {
+      "method": "POST",
+      "path": "/api/pledges",
+      "sourceIp": "127.0.0.1"
+    }
+  },
+  "isBase64Encoded": false,
+  "body": "{\"campaignId\": \"PASTE_A_CAMPAIGN_ID\", \"item\": \"Blankets\", \"quantity\": 100000}"
+}

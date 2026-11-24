@@ -1,0 +1,10 @@
+# Floci: a free local copy of AWS (Lab 7). If your Lab 7 project already has infra/floci/docker-compose.yml, use THAT one instead.
+# Lambda needs the Docker socket so Floci can start function containers.
+services:
+  floci:
+    image: floci/floci:latest
+    user: root
+    ports:
+      - "4566:4566"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
