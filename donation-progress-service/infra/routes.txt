@@ -1,0 +1,6 @@
+GET /api/health/donations
+GET /api/campaigns/{id}/progress
+POST /api/donations
+GET /api/donations
+OPTIONS /api/donations
+OPTIONS /api/campaigns/{id}/progress

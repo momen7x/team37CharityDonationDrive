@@ -1,0 +1,24 @@
+# Floci: a free local copy of AWS (Lab 7). Start with:  docker compose up -d   (from this folder)
+# Lambda needs the Docker socket so Floci can start function containers.
+# FLOCI_STORAGE_MODE=persistent keeps tables, functions and secrets in the floci-data volume,
+# so they survive a restart. `docker compose down -v` deletes that volume (and all data).
+services:
+  floci:
+    image: floci/floci:latest
+    user: root
+    ports:
+      - "4566:4566"
+    environment:
+      FLOCI_STORAGE_MODE: persistent
+      FLOCI_STORAGE_PERSISTENT_PATH: /app/data
+      # Keep Lambda containers for 30 min when idle (default 5 min) and give a cold start 60 s (default 10 s):
+      # otherwise the first request after a quiet period can fail with 500 "Failed to get next invocation".
+      # At most 4 idle containers per function, so a burst of requests cannot leave dozens running.
+      FLOCI_SERVICES_LAMBDA_CONTAINER_IDLE_TIMEOUT_SECONDS: "1800"
+      FLOCI_SERVICES_LAMBDA_WARM_POOL_MAX_PER_FUNCTION: "4"
+      FLOCI_SERVICES_LAMBDA_INIT_TIMEOUT_SECONDS: "60"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - floci-data:/app/data
+volumes:
+  floci-data:

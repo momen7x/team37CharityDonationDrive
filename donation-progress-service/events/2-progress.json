@@ -1,0 +1,16 @@
+{
+  "version": "2.0",
+  "rawPath": "/api/campaigns/PASTE_A_CAMPAIGN_ID/progress",
+  "rawQueryString": "",
+  "headers": {
+    "content-type": "application/json"
+  },
+  "requestContext": {
+    "http": {
+      "method": "GET",
+      "path": "/api/campaigns/PASTE_A_CAMPAIGN_ID/progress",
+      "sourceIp": "127.0.0.1"
+    }
+  },
+  "isBase64Encoded": false
+}

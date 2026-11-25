@@ -1,0 +1,9 @@
+Security tests, API 68ae605157, 2026-11-23 23:11:01
+Warming up the functions...
+Human check (Cloudflare Turnstile) tests: the services must be deployed with TURNSTILE_MODE=enforce
+PASS  T25  Login with no human-check token                                expected 403      got 403
+PASS  T26  ...and the answer names HUMAN_CHECK_FAILED                     expected named    got named
+PASS  T27  Sign-up with no human-check token                              expected 403      got 403
+PASS  T28  Login with a made-up token (Cloudflare refuses it)             expected 403      got 403
+
+Result: 4 passed, 0 failed

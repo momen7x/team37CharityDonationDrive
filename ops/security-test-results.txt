@@ -1,0 +1,41 @@
+Security tests, API 68ae605157, 2026-11-23 21:55:28
+Warming up the functions...
+Preparing users and a campaign...
+
+Authentication
+PASS  T1   Create campaign with no token                                  expected 401      got 401
+PASS  T2   Forged token (signature tampered)                              expected 401      got 401
+PASS  T3   Garbage token                                                  expected 401      got 401
+Authorization (roles)
+PASS  T4   Donor tries to create a campaign (organizer only)              expected 403      got 403
+PASS  T5   Organizer tries to pledge (donor only)                         expected 403      got 403
+PASS  T6   Donor tries to confirm a delivery                              expected 403      got 403
+PASS  T7   Unknown route is not published by the gateway                  expected 404      got 404
+Ownership
+PASS  T8   Organizer B confirms a pledge of organizer A's campaign        expected 403      got 403
+PASS  T9   Donor B cancels donor A's pledge (IDOR)                        expected 403      got 403
+PASS  T10  Organizer B closes organizer A's campaign                      expected 403      got 403
+Internal routes (service-to-service only)
+PASS  T11  Donor calls the internal receipts route                        expected 403|404  got 404
+PASS  T12  Organizer reads the internal user lookup                       expected 403|404  got 404
+Input validation
+PASS  T13  Campaign with empty title and negative target                  expected 400      got 400
+PASS  T14  Pledge with extra fields (mass assignment)                     expected 400      got 400
+PASS  T15  Script text and a non-number quantity                          expected 400|404  got 400
+PASS  T16  Write with a non-JSON content type                             expected 415      got 415
+Business rules
+PASS  T17  Pledge more than is still needed (4 of 10 already pledged)     expected 409      got 409
+PASS  T18  Confirm more than the pledge expects                           expected 409      got 409
+Browser and data exposure
+PASS  T19  Security headers present (X-Content-Type-Options: nosniff)     expected present  got present
+PASS  T20  CORS: the website's own origin (localhost:8080) is allowed     expected answered got answered
+PASS  T21  CORS: a foreign origin (evil.example) gets no allow header     expected refused  got refused
+PASS  T22  Register response contains no password or hash                 expected clean    got clean
+Secret exposure review (logs)
+PASS  T23  No password, bearer header or token text in any log group      expected 0        got 0
+Brute force (waiting 62 s so the per-minute login limit starts fresh)
+  login attempts: 401 401 401 401 401 401 401 401 401 401 429 429 429 429
+PASS  T24  Repeated failed logins end in 429 Too Many Requests            expected yes      got yes
+
+Result: 24 passed, 0 failed
+Now run: bash ops/monitor.sh   (the failed requests above feed the metric and alarm)

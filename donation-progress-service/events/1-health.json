@@ -1,0 +1,16 @@
+{
+  "version": "2.0",
+  "rawPath": "/api/health/donations",
+  "rawQueryString": "",
+  "headers": {
+    "content-type": "application/json"
+  },
+  "requestContext": {
+    "http": {
+      "method": "GET",
+      "path": "/api/health/donations",
+      "sourceIp": "127.0.0.1"
+    }
+  },
+  "isBase64Encoded": false
+}

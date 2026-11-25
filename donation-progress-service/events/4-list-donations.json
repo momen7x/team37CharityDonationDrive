@@ -1,0 +1,17 @@
+{
+  "version": "2.0",
+  "rawPath": "/api/donations",
+  "rawQueryString": "campaignId=PASTE_A_CAMPAIGN_ID",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer PASTE_A_TOKEN_FROM_THE_LOGIN_EVENT"
+  },
+  "requestContext": {
+    "http": {
+      "method": "GET",
+      "path": "/api/donations",
+      "sourceIp": "127.0.0.1"
+    }
+  },
+  "isBase64Encoded": false
+}
