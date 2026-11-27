@@ -1,0 +1,17 @@
+93800529b47d  floci-aws-charity-campaign-api-b1e04719  659129486b70
+8ca99301e458  floci-aws-charity-donation-api-ecca5dfc  659129486b70
+84e2b1f53e7a  floci-aws-charity-donation-api-6cc6b463  659129486b70
+a51029f6c4d1  floci-aws-charity-campaign-api-4ff9111a  659129486b70
+17c7840aaa18  floci-aws-charity-donation-api-c37d662e  659129486b70
+613f1142ccd2  floci-aws-charity-donation-api-7069bc43  659129486b70
+0eccf45783cb  floci-aws-charity-campaign-api-7078b2d9  659129486b70
+fc0259f5c1b3  floci-aws-charity-campaign-api-302e69d0  659129486b70
+0149772d445a  floci-aws-charity-campaign-api-84b5c164  659129486b70
+230fa5742f8a  floci-aws-charity-campaign-api-ffcc78b4  659129486b70
+c4b7ae34c41f  floci-aws-charity-donation-api-4af81205  659129486b70
+a1167d3a3ecd  floci-aws-charity-donation-api-bb833dc7  659129486b70
+3ae7ded83205  floci-aws-charity-pledge-api-a3313d72  659129486b70
+cad1424c0231  floci-aws-charity-pledge-api-d51f762b  659129486b70
+377f1093554c  floci-aws-charity-pledge-api-f432c8ae  659129486b70
+41422ee1d520  floci-floci-1  floci/floci:latest
+6b3120514ddc  floci-aws-ui  90dcaa588f9b
